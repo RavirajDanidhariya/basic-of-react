@@ -1,64 +1,64 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
+/**
+ * React.createElement ==> React Element - JS Object ==> HTMLElemente (render)
+ * **/
+const normalHeading = React.createElement(
   "h1",
   { id: "heading" },
-  "Hello World From React!"
+  "Namaste React🚀"
 );
 
-/***
- * heading is an object which contains details about the react element
- * 
- * {
-    "type": "h1",
-    "key": null,
-    "ref": null,
-    "props": {
-    "id": "heading",
-    "children": "Hello World From React!"
-    },
-    "_owner": null,
-    "_store": {}
-  }
- * 
- * **/
+console.log(normalHeading);
 
 /**
- * <div id="parent">
- *      <div id="child1">
- *          <h1>I'm an h1 tag</h1>
- *          <h2>I'm an h2 tag</h2>
- *      </div>
- * </div>
- *      <div id="child2">
- *          <h1>I'm an h1 tag</h1>
- *          <h2>I'm an h2 tag</h2>
- *      </div>
+ * JSX - it is not HTML in JS
+ * JSX - HTML-like  or XML-like syntax
  *
+ * JSX - JS engine does not understands this JSX
+ *
+ * JSX (transplied before it reaches the JS) -> PARCEL -> Babel
+ *
+ * JSX ==> React.createElement (by PARCEL using Babel) ==> React Element - JS Object ==> HTMLElemente (render)
  * **/
+
+// React Element
+const heading = (
+  <h1 id="heading" tabIndex="1" className="heading">
+    Namaste React Using JSX Element
+  </h1>
+);
+
 console.log(heading);
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child1", key: "child1" }, [
-    React.createElement("h1", { key: "h1" }, "This is Namaste React 🚀"),
-    React.createElement("h2", { key: "h2" }, "I'm an h2 tag"),
-  ]),
-  React.createElement("div", { id: "child2", key: "child2" }, [
-    React.createElement("h1", { key: "heading1" }, "I'm an h1 tag"),
-    React.createElement("h2", { key: "heading2" }, "I'm an h2 tag"),
-  ]),
-]);
+const Title = () => {
+  return (
+    <>
+      <h1 className="heading" tabIndex="2">
+        Title Component
+      </h1>
+      {heading}
+    </>
+  );
+};
 
-console.log(parent);
+// React Component
+// Class Based Component
+// Functional Component
+
+const HeadingComponent = () => {
+  return (
+    <div className="container">
+      <Title />
+      <Title></Title>
+      {Title()}
+      <h1>Heading Functional Component</h1>
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
-
-/**
- *
- * ReactElemente(object)  ==>  HTML(Browser Understands)
- *
- * root.render takes the heading(object) and converts it into a html tag
- * **/
+// root.render(heading); // JSX Element
+root.render(<HeadingComponent />); // Functional Component
