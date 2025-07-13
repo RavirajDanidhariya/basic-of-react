@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const heading = React.createElement(
   "h1",
   { id: "heading" },
@@ -37,18 +40,13 @@ const heading = React.createElement(
 console.log(heading);
 
 const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement(
-    "div",
-    { id: "child1" },
-    // React.createElement("h1", {}, "I'm an h1 tag")
-    [
-      React.createElement("h1", { key: "h1" }, "I'm an h1 tag"),
-      React.createElement("h2", { key: "h2" }, "I'm an h2 tag"),
-    ]
-  ),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
+  React.createElement("div", { id: "child1", key: "child1" }, [
+    React.createElement("h1", { key: "h1" }, "This is Namaste React 🚀"),
+    React.createElement("h2", { key: "h2" }, "I'm an h2 tag"),
+  ]),
+  React.createElement("div", { id: "child2", key: "child2" }, [
+    React.createElement("h1", { key: "heading1" }, "I'm an h1 tag"),
+    React.createElement("h2", { key: "heading2" }, "I'm an h2 tag"),
   ]),
 ]);
 
