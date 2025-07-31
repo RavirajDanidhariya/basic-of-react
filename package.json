@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/RavirajDanidhariya/basic-of-react#readme",
   "devDependencies": {
-    "parcel": "^2.15.4"
+    "parcel": "^2.15.4",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+
   },
   "browserslist": [
     "last 2 versions"
