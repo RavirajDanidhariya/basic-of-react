@@ -27,3 +27,9 @@
 - npm install -D tailwindcss@3 postcss
 - npx tailwindcss init - This will create tailwind.config.js file
 - Add postcssrc - used to understand tailwind
+
+## Types of testing:
+
+- Unit Testing - Test React Component on Isolation - Render properly or not
+- Integration Testing - Testing integration of components (Search feature)
+- End to End Testing
